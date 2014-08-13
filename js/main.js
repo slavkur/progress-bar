@@ -2,18 +2,15 @@
 define([
     "jquery",
     "underscore",
-    "backbone"
-], function($, _, Backbone) {
+    "backbone",
+    "views/example"
+], function($, _, Backbone, ExampleView) {
     console.log("refer for help", "https://github.com/requirejs/example-jquery-cdn");
     console.log($);
     console.log(_);
     console.log(Backbone);
 
-    var CustomView = Backbone.View.extend({
-       initialize: function(){
-           console.log('I am custom view');
-       } 
-    });
-
-    new CustomView();
+    new ExampleView({
+    	el: $('body#content')
+    }).render();
 });
